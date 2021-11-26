@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import * as cryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  fgValidacion = this.fb.group({
+    correo: ['', [Validators.required, Validators.email]],
+    clave: ['', [Validators.required]]
+  });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

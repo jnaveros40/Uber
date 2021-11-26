@@ -24,6 +24,9 @@ const routes: Routes = [
   },{
     path: 'servicios',
     loadChildren: () => import('./modulos/servicios/servicios.module').then(m => m.ServiciosModule)
+  },{
+    path: 'rutas',
+    loadChildren: () => import('./modulos/rutas/rutas.module').then(m => m.RutasModule)
   },
 
   {
